@@ -1,0 +1,19 @@
+// Connexion à la base de données
+$pdo = new PDO('mysql:host=nom_hote;dbname=nom_base_de_donnees', 'nom_utilisateur', 'mot_de_passe');
+
+// Requête SQL pour récupérer des données
+$sql = "SELECT colonne1, colonne2 FROM table WHERE condition = :valeur";
+
+// Préparation de la requête
+$requete = $pdo->prepare($sql);
+
+// Exécution de la requête avec un paramètre
+$requete->execute(array('valeur' => 'valeur_condition'));
+
+// Récupération des résultats
+$resultats = $requete->fetchAll();
+
+// Affichage des résultats
+foreach ($resultats as $resultat) {
+    echo $resultat['colonne1'] . ' ' . $resultat['colonne2'] . '<br>';
+}
