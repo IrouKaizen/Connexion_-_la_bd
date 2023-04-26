@@ -1,3 +1,5 @@
+//ceci est un code écrit en php
+
 // Connexion à la base de données
 $pdo = new PDO('mysql:host=nom_hote;dbname=nom_base_de_donnees', 'nom_utilisateur', 'mot_de_passe');
 
